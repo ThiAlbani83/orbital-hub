@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEC365 Orbital Hub</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="widget">
+        <header class="widget-header">
+          <p class="tag">Conheça o ECOSSISTEMA CIBERNÉTICO da SEC365</p>
+          <h1>SmartSEC — Hub Orbital de Inteligência e Defesa Cibernética</h1>
+        </header>
+
+        <section class="hub-rect" aria-label="Hub orbital SEC365">
+          <article class="orbit-panel" id="orbitScene">
+            <div class="orbit-controls">
+              <button id="toggleRotation" type="button" class="switch-btn on">Auto-rotação ON</button>
+            </div>
+            <svg id="orbitSvg" class="orbit-svg" viewBox="0 0 1000 700" preserveAspectRatio="none"></svg>
+            <div class="center-core" id="centerCore">
+              <p class="core-kicker">FUSION CORE</p>
+              <h2>FUSION</h2>
+              <p class="core-stack">IA • Automação • Correlação • CTI • Resposta • Governança</p>
+            </div>
+            <div id="domainLayer"></div>
+          </article>
+
+          <article class="info-panel" id="infoPanel">
+            <p class="info-kicker">Arquitetura por Domínios</p>
+            <p class="info-message">Interaja com o modelo: posicione o cursor sobre uma camada ou na órbita para explorar seus domínios e submódulos.</p>
+
+            <ul class="relation-list" id="relationList"></ul>
+
+            <section class="detail-modal" id="detailModal" aria-live="polite">
+              <p class="modal-kicker" id="modalKicker">Domínio selecionado</p>
+              <h4 id="modalTitle">-</h4>
+              <p class="modal-position" id="modalPosition"></p>
+              <p class="modal-message" id="modalMessage"></p>
+              <ul class="modal-services" id="modalServices"></ul>
+            </section>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

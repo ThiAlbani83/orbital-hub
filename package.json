@@ -1,0 +1,12 @@
+{
+  "name": "dynamic-security-orb",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Imagem animada dinamica de servicos para embed em site",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
