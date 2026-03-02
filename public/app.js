@@ -1,70 +1,119 @@
 const domains = [
   {
-    name: 'i@INTEL',
-    color: '#2f9bff',
-    position: 'Inteligência e CTI',
-    message: 'Antecipação e visão estratégica.',
-    services: ['ThreatCore', 'Threat Intelligence', 'Threat Hunting', 'Dark Web Monitoring', 'Adversary Profiling', 'Relatórios Estratégicos']
+    name: "i@INTEL",
+    color: "#2f9bff",
+    position: "Inteligência e CTI",
+    message: "Antecipação e visão estratégica.",
+    services: [
+      "ThreatCore",
+      "Threat Intelligence",
+      "Threat Hunting",
+      "Dark Web Monitoring",
+      "Adversary Profiling",
+      "Relatórios Estratégicos",
+    ],
   },
   {
-    name: 'i@RISK',
-    color: '#ffb321',
-    position: 'Gestão de Exposição e Vulnerabilidade',
-    message: 'Alerta, prevenção e priorização.',
-    services: ['VEMaaS', 'Attack Surface Management', 'Patch Management', 'Risk Assessment', 'Exposure Mapping', 'OT / IoT Exposure']
+    name: "i@RISK",
+    color: "#ffb322",
+    position: "Gestão de Exposição e Vulnerabilidade",
+    message: "Alerta, prevenção e priorização.",
+    services: [
+      "VEMaaS",
+      "Attack Surface Management",
+      "Patch Management",
+      "Risk Assessment",
+      "Exposure Mapping",
+      "OT / IoT Exposure",
+    ],
   },
   {
-    name: 'i@DEV',
-    color: '#d34cff',
-    position: 'Engenharia e Desenvolvimento Seguro',
-    message: 'Inovação com segurança embarcada.',
-    services: ['Secure Software Engineering', 'DevSecOps', 'SAST / DAST / SCA', 'Code Review', 'Hardening', 'Arquitetura Cloud Segura']
+    name: "i@DEV",
+    color: "#d34cff",
+    position: "Engenharia e Desenvolvimento Seguro",
+    message: "Inovação com segurança embarcada.",
+    services: [
+      "Secure Software Engineering",
+      "DevSecOps",
+      "SAST / DAST / SCA",
+      "Code Review",
+      "Hardening",
+      "Arquitetura Cloud Segura",
+    ],
   },
   {
-    name: 'i@DEFENSE',
-    color: '#d7263d',
-    position: 'Operações de Defesa e Resposta',
-    message: 'Ação, resposta e contenção.',
-    services: ['CDOC 365', 'MDR / XDR', 'Incident Response', 'Forense Digital', 'Breach & Attack Simulation', 'Monitoramento de Infraestruturas Críticas']
+    name: "i@DEFENSE",
+    color: "#d7263d",
+    position: "Operações de Defesa e Resposta",
+    message: "Ação, resposta e contenção.",
+    services: [
+      "CDOC 365",
+      "MDR / XDR",
+      "Incident Response",
+      "Forense Digital",
+      "Breach & Attack Simulation",
+      "Monitoramento de Infraestruturas Críticas",
+    ],
   },
   {
-    name: 'i@CLOUD',
-    color: '#3f74ff',
-    position: 'Proteção de Infraestrutura Digital',
-    message: 'Proteção distribuída.',
-    services: ['Cloud Security', 'SaaS Security', 'Endpoint Security', 'Identity Security', 'SIEM', 'WAF', 'E-mail Security']
+    name: "i@CLOUD",
+    color: "#3f74ff",
+    position: "Proteção de Infraestrutura Digital",
+    message: "Proteção distribuída.",
+    services: [
+      "Cloud Security",
+      "SaaS Security",
+      "Endpoint Security",
+      "Identity Security",
+      "SIEM",
+      "WAF",
+      "E-mail Security",
+    ],
   },
   {
-    name: 'i@GOV',
-    color: '#96a0b5',
-    position: 'Governança, Estratégia e Conformidade',
-    message: 'Solidez institucional.',
-    services: ['LGPD', 'vDPO', 'CISO as a Service', 'Advisory Executivo', 'Plano de Resposta a Incidentes', 'Disaster Recovery', 'BCP']
+    name: "i@GOV",
+    color: "#96a0b5",
+    position: "Governança, Estratégia e Conformidade",
+    message: "Solidez institucional.",
+    services: [
+      "LGPD",
+      "vDPO",
+      "CISO as a Service",
+      "Advisory Executivo",
+      "Plano de Resposta a Incidentes",
+      "Disaster Recovery",
+      "BCP",
+    ],
   },
   {
-    name: 'i@WORKFORCE',
-    color: '#183f9f',
-    position: 'Capacidade Técnica Estratégica',
-    message: 'Força operacional.',
-    services: ['Outsourcing de Segurança', 'Squads dedicados', 'Alocação Especializada', 'Gestão Técnica Terceirizada']
-  }
+    name: "i@WORKFORCE",
+    color: "#183f9f",
+    position: "Capacidade Técnica Estratégica",
+    message: "Força operacional.",
+    services: [
+      "Outsourcing de Segurança",
+      "Squads dedicados",
+      "Alocação Especializada",
+      "Gestão Técnica Terceirizada",
+    ],
+  },
 ];
 
-const scene = document.getElementById('orbitScene');
-const svg = document.getElementById('orbitSvg');
-const domainLayer = document.getElementById('domainLayer');
-const centerCore = document.getElementById('centerCore');
+const scene = document.getElementById("orbitScene");
+const svg = document.getElementById("orbitSvg");
+const domainLayer = document.getElementById("domainLayer");
+const centerCore = document.getElementById("centerCore");
 
-const infoPanel = document.getElementById('infoPanel');
-const relationList = document.getElementById('relationList');
-const detailModal = document.getElementById('detailModal');
-const modalTitle = document.getElementById('modalTitle');
-const modalPosition = document.getElementById('modalPosition');
-const modalMessage = document.getElementById('modalMessage');
-const modalServices = document.getElementById('modalServices');
-const toggleRotationBtn = document.getElementById('toggleRotation');
+const infoPanel = document.getElementById("infoPanel");
+const relationList = document.getElementById("relationList");
+const detailModal = document.getElementById("detailModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalPosition = document.getElementById("modalPosition");
+const modalMessage = document.getElementById("modalMessage");
+const modalServices = document.getElementById("modalServices");
+const toggleRotationBtn = document.getElementById("toggleRotation");
 
-const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
 let reducedMotion = prefersReduced.matches;
 
 let geometry = null;
@@ -75,7 +124,7 @@ let orbitState = [];
 let orbitConfig = [];
 
 const settings = {
-  autoRotation: true
+  autoRotation: true,
 };
 
 let activeIndex = -1;
@@ -90,22 +139,26 @@ const GLOBAL_ORBIT_SPEED = 0.000082;
 
 function init() {
   domainNodes = domains.map((domain, index) => createDomainNode(domain, index));
-  relationRows = domains.map((domain, index) => createRelationRow(domain, index));
+  relationRows = domains.map((domain, index) =>
+    createRelationRow(domain, index),
+  );
   configureOrbitModel();
   orbitState = domains.map(() => ({ x: 0, y: 0 }));
 
-  detailModal.addEventListener('mouseenter', () => clearTimeout(hideModalTimer));
-  detailModal.addEventListener('mouseleave', scheduleHideModal);
-  scene.addEventListener('mouseenter', () => {
+  detailModal.addEventListener("mouseenter", () =>
+    clearTimeout(hideModalTimer),
+  );
+  detailModal.addEventListener("mouseleave", scheduleHideModal);
+  scene.addEventListener("mouseenter", () => {
     orbitHoverPaused = true;
     resumeStartMs = null;
   });
-  scene.addEventListener('mouseleave', () => {
+  scene.addEventListener("mouseleave", () => {
     orbitHoverPaused = false;
     resumeStartMs = performance.now();
   });
 
-  toggleRotationBtn.addEventListener('click', () => {
+  toggleRotationBtn.addEventListener("click", () => {
     settings.autoRotation = !settings.autoRotation;
     applyToggleVisual(toggleRotationBtn, settings.autoRotation);
     if (!settings.autoRotation) {
@@ -113,7 +166,7 @@ function init() {
       simTime = 0;
       placeNodes();
       renderSvg();
-      centerCore.style.transform = 'translate(-50%, -50%) scale(1)';
+      centerCore.style.transform = "translate(-50%, -50%) scale(1)";
     }
   });
 
@@ -128,26 +181,26 @@ function init() {
 }
 
 function createDomainNode(domain, index) {
-  const node = document.createElement('button');
-  node.type = 'button';
-  node.className = 'domain-node';
+  const node = document.createElement("button");
+  node.type = "button";
+  node.className = "domain-node";
   const orbitalArt = buildOrbitalArt(domain);
   node.style.backgroundImage = `url("${orbitalArt}"), linear-gradient(155deg, ${hexToRgba(domain.color, 0.94)}, ${hexToRgba(domain.color, 0.58)})`;
-  node.style.backgroundRepeat = 'no-repeat, no-repeat';
-  node.style.backgroundPosition = 'center center, center center';
-  node.style.backgroundSize = '84% 84%, cover';
+  node.style.backgroundRepeat = "no-repeat, no-repeat";
+  node.style.backgroundPosition = "center center, center center";
+  node.style.backgroundSize = "84% 84%, cover";
   node.innerHTML = `<p class="title">${domain.name}</p><p class="subtitle">${domain.position}</p>`;
 
-  node.addEventListener('mouseenter', () => {
-    selectDomain(index, 'orbit');
+  node.addEventListener("mouseenter", () => {
+    selectDomain(index, "orbit");
     showModalFor(index, node);
   });
-  node.addEventListener('focus', () => {
-    selectDomain(index, 'orbit');
+  node.addEventListener("focus", () => {
+    selectDomain(index, "orbit");
     showModalFor(index, node);
   });
-  node.addEventListener('mouseleave', () => {
-    if (hoverSource === 'orbit') {
+  node.addEventListener("mouseleave", () => {
+    if (hoverSource === "orbit") {
       hideModal();
       clearActive();
     }
@@ -158,38 +211,38 @@ function createDomainNode(domain, index) {
 }
 
 function createRelationRow(domain, index) {
-  const row = document.createElement('li');
-  row.className = 'relation-item';
+  const row = document.createElement("li");
+  row.className = "relation-item";
 
-  const text = document.createElement('div');
-  text.className = 'relation-text';
+  const text = document.createElement("div");
+  text.className = "relation-text";
   text.innerHTML = `<p class="relation-name">${domain.name}</p><p class="relation-pos">${domain.position}</p>`;
 
-  const arrow = document.createElement('button');
-  arrow.type = 'button';
-  arrow.className = 'relation-arrow';
-  arrow.setAttribute('aria-label', `Abrir submódulos de ${domain.name}`);
-  arrow.textContent = '→';
+  const arrow = document.createElement("button");
+  arrow.type = "button";
+  arrow.className = "relation-arrow";
+  arrow.setAttribute("aria-label", `Abrir submódulos de ${domain.name}`);
+  arrow.textContent = "→";
 
   row.appendChild(text);
   row.appendChild(arrow);
 
-  row.addEventListener('mouseenter', () => selectDomain(index, 'list'));
-  row.addEventListener('mouseleave', () => {
-    if (hoverSource === 'list') clearActive();
+  row.addEventListener("mouseenter", () => selectDomain(index, "list"));
+  row.addEventListener("mouseleave", () => {
+    if (hoverSource === "list") clearActive();
   });
 
-  arrow.addEventListener('mouseenter', () => {
+  arrow.addEventListener("mouseenter", () => {
     clearTimeout(hideModalTimer);
-    selectDomain(index, 'arrow');
+    selectDomain(index, "arrow");
     showModalFor(index, arrow);
   });
-  arrow.addEventListener('focus', () => {
+  arrow.addEventListener("focus", () => {
     clearTimeout(hideModalTimer);
-    selectDomain(index, 'arrow');
+    selectDomain(index, "arrow");
     showModalFor(index, arrow);
   });
-  arrow.addEventListener('mouseleave', scheduleHideModal);
+  arrow.addEventListener("mouseleave", scheduleHideModal);
 
   relationList.appendChild(row);
   return { row, arrow };
@@ -199,8 +252,12 @@ function selectDomain(index, source) {
   activeIndex = index;
   hoverSource = source;
 
-  domainNodes.forEach((node, idx) => node.classList.toggle('active', idx === index));
-  relationRows.forEach((entry, idx) => entry.row.classList.toggle('active', idx === index));
+  domainNodes.forEach((node, idx) =>
+    node.classList.toggle("active", idx === index),
+  );
+  relationRows.forEach((entry, idx) =>
+    entry.row.classList.toggle("active", idx === index),
+  );
 
   const domain = domains[index];
   infoPanel.style.background = `linear-gradient(165deg, ${hexToRgba(domain.color, 0.8)}, rgba(6, 12, 24, 0.95))`;
@@ -211,11 +268,12 @@ function clearActive() {
   activeIndex = -1;
 
   domainNodes.forEach((node) => {
-    node.classList.remove('active');
-    node.style.opacity = '1';
+    node.classList.remove("active");
+    node.style.opacity = "1";
   });
-  relationRows.forEach((entry) => entry.row.classList.remove('active'));
-  infoPanel.style.background = 'linear-gradient(165deg, rgba(10, 32, 86, 0.86), rgba(8, 17, 34, 0.94))';
+  relationRows.forEach((entry) => entry.row.classList.remove("active"));
+  infoPanel.style.background =
+    "linear-gradient(165deg, rgba(10, 32, 86, 0.86), rgba(8, 17, 34, 0.94))";
 }
 
 function showModalFor(index) {
@@ -223,10 +281,12 @@ function showModalFor(index) {
   modalTitle.textContent = domain.name;
   modalPosition.textContent = domain.position;
   modalMessage.textContent = domain.message;
-  modalServices.innerHTML = domain.services.map((service) => `<li>${service}</li>`).join('');
+  modalServices.innerHTML = domain.services
+    .map((service) => `<li>${service}</li>`)
+    .join("");
 
   detailModal.style.background = `linear-gradient(155deg, ${hexToRgba(domain.color, 0.42)}, rgba(2, 7, 15, 0.78))`;
-  detailModal.classList.add('open');
+  detailModal.classList.add("open");
   const firstRow = relationRows[0]?.row;
   if (firstRow) {
     const panelRect = infoPanel.getBoundingClientRect();
@@ -247,12 +307,12 @@ function scheduleHideModal() {
 }
 
 function hideModal() {
-  detailModal.classList.remove('open');
+  detailModal.classList.remove("open");
 }
 
 function applyToggleVisual(button, isOn) {
-  button.classList.toggle('on', isOn);
-  button.textContent = isOn ? 'Auto-rotação ON' : 'Auto-rotação OFF';
+  button.classList.toggle("on", isOn);
+  button.textContent = isOn ? "Auto-rotação ON" : "Auto-rotação OFF";
 }
 
 function isPaused() {
@@ -273,17 +333,17 @@ function updateGeometry() {
     cx,
     cy,
     orbitR: minDim * 0.38,
-    coreR: minDim * 0.115
+    coreR: minDim * 0.115,
   };
 
   centerCore.style.width = `${geometry.coreR * 2.45}px`;
-  svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+  svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
 }
 
 function pointAt(cx, cy, radius, angle) {
   return {
     x: cx + Math.cos(angle) * radius,
-    y: cy + Math.sin(angle) * radius
+    y: cy + Math.sin(angle) * radius,
   };
 }
 
@@ -300,7 +360,7 @@ function placeNodes() {
       angle,
       radius,
       x: cx + Math.cos(angle) * radius,
-      y: cy + Math.sin(angle) * radius
+      y: cy + Math.sin(angle) * radius,
     };
     orbitState[i] = p;
     domainNodes[i].style.left = `${p.x}px`;
@@ -312,7 +372,7 @@ function renderSvg() {
   const { w, h, cx, cy, orbitR, coreR } = geometry;
   const glow = 0.56 + Math.sin(simTime * 0.0019) * 0.14;
 
-  let markup = '';
+  let markup = "";
   markup += `<defs>
     <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="rgba(53,124,255,0.95)" />
@@ -330,10 +390,10 @@ function renderSvg() {
     const dirLen = Math.hypot(dirX, dirY) || 1;
     const p0 = {
       x: cx + (dirX / dirLen) * coreR * 1.15,
-      y: cy + (dirY / dirLen) * coreR * 1.15
+      y: cy + (dirY / dirLen) * coreR * 1.15,
     };
     const isActive = i === activeIndex;
-    markup += `<line x1="${p0.x}" y1="${p0.y}" x2="${p1.x}" y2="${p1.y}" stroke="${isActive ? 'rgba(167,220,255,0.95)' : 'rgba(89,154,255,0.55)'}" stroke-width="${isActive ? 2.4 : 1.45}" />`;
+    markup += `<line x1="${p0.x}" y1="${p0.y}" x2="${p1.x}" y2="${p1.y}" stroke="${isActive ? "rgba(167,220,255,0.95)" : "rgba(89,154,255,0.55)"}" stroke-width="${isActive ? 2.4 : 1.45}" />`;
   }
 
   if (activeIndex >= 0 && orbitState[activeIndex]) {
@@ -378,8 +438,14 @@ function tick(ts) {
 }
 
 function hexToRgba(hex, alpha) {
-  const raw = hex.replace('#', '');
-  const full = raw.length === 3 ? raw.split('').map((c) => c + c).join('') : raw;
+  const raw = hex.replace("#", "");
+  const full =
+    raw.length === 3
+      ? raw
+          .split("")
+          .map((c) => c + c)
+          .join("")
+      : raw;
   const num = Number.parseInt(full, 16);
   const r = (num >> 16) & 255;
   const g = (num >> 8) & 255;
@@ -409,7 +475,7 @@ function configureOrbitModel() {
     orbitConfig[i] = {
       baseRadiusFactor: 1,
       // Uniform angular motion keeps proportional spacing and avoids collisions.
-      angularSpeed: GLOBAL_ORBIT_SPEED
+      angularSpeed: GLOBAL_ORBIT_SPEED,
     };
   }
 }
@@ -424,13 +490,13 @@ function getNodeDiameter() {
 function applyCoreStyle() {
   const coreArt = buildCoreArt();
   centerCore.style.backgroundImage = `url("${coreArt}"), radial-gradient(circle at 30% 20%, #ff5b64 0%, #d51727 42%, #7d0010 100%)`;
-  centerCore.style.backgroundRepeat = 'no-repeat, no-repeat';
-  centerCore.style.backgroundPosition = 'center center, center center';
-  centerCore.style.backgroundSize = '54% 54%, cover';
+  centerCore.style.backgroundRepeat = "no-repeat, no-repeat";
+  centerCore.style.backgroundPosition = "center center, center center";
+  centerCore.style.backgroundSize = "54% 54%, cover";
 }
 
 function buildOrbitalArt(domain) {
-  const key = domain.name.replace('i@', '').trim().toUpperCase();
+  const key = domain.name.replace("i@", "").trim().toUpperCase();
   const iconPaths = getDomainIcon(key);
   const svg = `
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'>
@@ -459,37 +525,37 @@ function buildCoreArt() {
 }
 
 function getDomainIcon(key) {
-  if (key === 'DEFENSE') {
+  if (key === "DEFENSE") {
     return "<path d='M60 24 86 33v21c0 19-12 33-26 39-14-6-26-20-26-39V33z' fill='rgba(255,255,255,0.24)' stroke='rgba(255,255,255,0.36)' stroke-width='2.2'/>";
   }
-  if (key === 'CLOUD') {
+  if (key === "CLOUD") {
     return "<path d='M39 74h41a13 13 0 0 0 0-26h-2a20 20 0 0 0-37-5 15 15 0 0 0-2 31z' fill='rgba(255,255,255,0.24)' stroke='rgba(255,255,255,0.36)' stroke-width='2.2'/>";
   }
-  if (key === 'GOV') {
+  if (key === "GOV") {
     return "<path d='M31 45h58M60 34v11M43 45l-9 15h18zm43 0-9 15h18M39 82h42' stroke='rgba(255,255,255,0.36)' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/>";
   }
-  if (key === 'RISK') {
+  if (key === "RISK") {
     return "<path d='M60 28 88 79H32z' fill='rgba(255,255,255,0.2)' stroke='rgba(255,255,255,0.34)' stroke-width='2.2'/><path d='M60 47v18m0 9h.01' stroke='rgba(255,255,255,0.44)' stroke-width='3.2' stroke-linecap='round'/>";
   }
-  if (key === 'INTEL') {
+  if (key === "INTEL") {
     return "<circle cx='60' cy='60' r='15' fill='rgba(255,255,255,0.2)' stroke='rgba(255,255,255,0.34)' stroke-width='2.2'/><circle cx='60' cy='60' r='5.5' fill='rgba(255,255,255,0.42)'/>";
   }
-  if (key === 'DEV') {
+  if (key === "DEV") {
     return "<path d='M45 46 34 60l11 14M75 46l11 14-11 14M66 40 54 80' stroke='rgba(255,255,255,0.42)' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round' fill='none'/>";
   }
-  if (key === 'WORKFORCE') {
+  if (key === "WORKFORCE") {
     return "<circle cx='49' cy='52' r='7.5' fill='rgba(255,255,255,0.24)'/><circle cx='71' cy='52' r='7.5' fill='rgba(255,255,255,0.24)'/><path d='M35 77c3-9 11-13 21-13s18 4 21 13' stroke='rgba(255,255,255,0.36)' stroke-width='3.2' fill='none' stroke-linecap='round'/>";
   }
   return "<circle cx='60' cy='60' r='10' fill='rgba(255,255,255,0.18)'/>";
 }
 
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
   updateGeometry();
   placeNodes();
   renderSvg();
 });
 
-prefersReduced.addEventListener('change', (event) => {
+prefersReduced.addEventListener("change", (event) => {
   reducedMotion = event.matches;
 });
 
