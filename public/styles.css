@@ -32,10 +32,10 @@ body {
 .widget {
   width: min(96vw, 1200px);
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-  backdrop-filter: blur(8px);
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.5);
+  border: none;
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
   padding: 16px;
 }
 
@@ -103,9 +103,16 @@ body {
   width: clamp(130px, 16vw, 205px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 20%, #3f86ff 0%, #1d4fcb 40%, #10296d 100%);
+  background: radial-gradient(
+    circle at 30% 20%,
+    #3f86ff 0%,
+    #1d4fcb 40%,
+    #10296d 100%
+  );
   border: 2px solid rgba(120, 176, 255, 0.55);
-  box-shadow: 0 0 34px rgba(31, 109, 255, 0.44), inset 0 -16px 30px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    0 0 34px rgba(31, 109, 255, 0.44),
+    inset 0 -16px 30px rgba(0, 0, 0, 0.3);
   z-index: 4;
   display: grid;
   align-content: center;
@@ -152,7 +159,9 @@ body {
     0 20px 34px rgba(0, 0, 0, 0.38);
   cursor: pointer;
   z-index: 5;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .domain-node::after {
@@ -177,7 +186,9 @@ body {
 .domain-node:focus-visible,
 .domain-node.active {
   transform: translate(-50%, -50%) scale(1.05);
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25), 0 18px 28px rgba(0, 0, 0, 0.45);
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.25),
+    0 18px 28px rgba(0, 0, 0, 0.45);
   outline: none;
 }
 
@@ -197,7 +208,11 @@ body {
 .info-panel {
   position: relative;
   padding: 20px 16px;
-  background: linear-gradient(165deg, rgba(10, 32, 86, 0.86), rgba(8, 17, 34, 0.94));
+  background: linear-gradient(
+    165deg,
+    rgba(10, 32, 86, 0.86),
+    rgba(8, 17, 34, 0.94)
+  );
   transition: background 220ms ease;
   display: grid;
   align-content: start;
@@ -261,7 +276,10 @@ body {
   border-radius: 11px;
   padding: 9px 10px;
   background: rgba(255, 255, 255, 0.06);
-  transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+  transition:
+    transform 140ms ease,
+    border-color 140ms ease,
+    background 140ms ease;
   display: flex;
   align-items: center;
   justify-content: space-between;
