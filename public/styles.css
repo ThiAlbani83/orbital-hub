@@ -19,10 +19,7 @@ body {
 body {
   font-family: "Sora", "Segoe UI", sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(900px 500px at 8% -10%, #1d3f8f 0%, transparent 60%),
-    radial-gradient(800px 800px at 95% 95%, #2a154f 0%, transparent 64%),
-    linear-gradient(155deg, var(--bg-0), var(--bg-1) 55%, var(--bg-2));
+  background: transparent;
 }
 
 .page {
