@@ -15,7 +15,7 @@ const domains = [
   },
   {
     name: "i@RISK",
-    color: "#ffb322",
+    color: "#ffb321",
     position: "Gestão de Exposição e Vulnerabilidade",
     message: "Alerta, prevenção e priorização.",
     services: [
